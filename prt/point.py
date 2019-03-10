@@ -3,6 +3,8 @@ from functools import reduce
 
 class Point(tuple):
     def __new__(cls, *args):
+        if len(args) == 1:
+            return tuple.__new__(cls, args[0])
         if len(args) != 3:
             raise ValueError("Point requires exactly 3 arguments")
         return tuple.__new__(cls, args)
