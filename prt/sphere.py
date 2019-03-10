@@ -6,11 +6,10 @@ from prt.vector import Vector
 
 
 class Sphere(Shape):
-    def __init__(self, center: "Point", radius: float, color: tuple):
-        super().__init__()
+    def __init__(self, center: "Point", radius: float, color: tuple, *args):
+        super().__init__(color, *args)
         self.center = center
         self.radius = radius
-        self.color = color
 
     def intersection(self, ray: "Ray"):
         """
